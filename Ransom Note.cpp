@@ -1,0 +1,12 @@
+bool canConstruct(string ransomNote, string magazine) {
+        unordered_map<char, int> map1;
+        for(char c : magazine)
+            map1[c]++;
+        for(char c : ransomNote)
+            map1[c]--;
+        for(int i = 0; i < ransomNote.size(); i++){
+            if(map1[ransomNote[i]] < 0)
+                return false;
+        }
+        return true;
+    }
